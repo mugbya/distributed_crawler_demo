@@ -13,6 +13,7 @@ class TiebaSpider(RedisSpider):
     # base_url = 'https://tieba.baidu.com'
 
     def parse(self, response):
+        print(response.url)
         lis = response.xpath('//*[@id="thread_list"]/li[@class=" j_thread_list clearfix"]')
         for li in lis:
             try:
